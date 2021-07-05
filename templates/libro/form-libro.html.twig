@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<br>
+<div class="container ">
+
+    <h3>Alta de Libros</h3>
+
+<form method='POST' action="{{ path('crear-libro') }}">
+   
+    <div class="form-group">
+      <label class="form-label">
+        ISBN
+      </label>
+      <input type="number" required class="form-control" name="isbn" id="libroIsbn">
+    </div>
+    
+    <div class="form-group">
+      <label class="form-label">
+        Título
+      </label>
+      <input type="text" required class="form-control" name="titulo" id="libroTitulo">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Autor
+      </label>
+      <input type="text" required class="form-control" name="autor" id="libroAutor">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Editorial
+      </label>
+      <input type="text" required class="form-control" name="editorial" id="libroEditorial">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
+</form>
+</div>
+{% endblock %}
